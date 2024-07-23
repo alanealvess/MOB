@@ -16,7 +16,7 @@ public class OngController {
     @Autowired
     private OngService ongService;
 
-    @GetMapping("/")
+    @GetMapping("/ong")
     public String index(Model model) {
         model.addAttribute("ong", new Ong());
         model.addAttribute("ongs", ongService.getAllOngs());
@@ -26,10 +26,10 @@ public class OngController {
     @PostMapping("/salvar-ong")
     public String salvarOng(@ModelAttribute Ong ong) {
         ongService.saveOng(ong);
-        return "redirect:/sucesso";
+        return "redirect:/ong/sucesso";
     }
 
-    @GetMapping("/sucesso")
+    @GetMapping("/ong/sucesso")
     public String sucesso() {
         return "cadastroong_feito";
     }

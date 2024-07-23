@@ -12,7 +12,7 @@ public class Cras {
     private Long id;
 
     private String nome;
-    private String cnpj;
+    private String email;
     private String cidade;
     private String bairro;
     private String contato;
@@ -36,12 +36,12 @@ public class Cras {
         this.nome = nome;
     }
 
-    public String getCnpj() {
-        return cnpj;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getCidade() {

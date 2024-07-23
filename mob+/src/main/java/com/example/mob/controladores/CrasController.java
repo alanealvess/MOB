@@ -16,7 +16,7 @@ public class CrasController {
     @Autowired
     private CrasService crasService;
 
-    @GetMapping("")
+    @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("cras", new Cras());
         model.addAttribute("crasList", crasService.getAllCras());
