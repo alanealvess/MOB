@@ -10,9 +10,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.example.mob.entidades.*;
 import com.example.mob.servicos.*;
 
+<<<<<<< HEAD
 import java.security.SecureRandom;
 import java.util.Base64;
 
+=======
+>>>>>>> 45232dac7c716d6fe8d2ed401437d775e8cd0b2f
 @Controller
 public class OngController {
 
@@ -28,8 +31,11 @@ public class OngController {
 
     @PostMapping("/salvar-ong")
     public String salvarOng(@ModelAttribute Ong ong) {
+<<<<<<< HEAD
         String senhaGerada = gerarSenhaAutomatica();
         ong.setSenha(senhaGerada);
+=======
+>>>>>>> 45232dac7c716d6fe8d2ed401437d775e8cd0b2f
         ongService.saveOng(ong);
         return "redirect:/ong/sucesso";
     }
@@ -38,6 +44,7 @@ public class OngController {
     public String sucesso() {
         return "cadastroong_feito";
     }
+<<<<<<< HEAD
 
     private String gerarSenhaAutomatica() {
         SecureRandom random = new SecureRandom();
@@ -45,4 +52,6 @@ public class OngController {
         random.nextBytes(bytes);
         return Base64.getEncoder().encodeToString(bytes);
     }
+=======
+>>>>>>> 45232dac7c716d6fe8d2ed401437d775e8cd0b2f
 }

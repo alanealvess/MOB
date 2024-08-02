@@ -15,6 +15,7 @@
             <h1 class="form-title">Cadastro de CRAS</h1>
             <form action="/salvar-cras" method="post" th:object="${cras}">
                 <div>
+<<<<<<< HEAD
                     <input type="text" id="nome" name="nome" th:field="*{nome}" placeholder="Nome" required><br><br>
                     
                    
@@ -30,6 +31,24 @@
                     <input type="text" id="contato" name="contato" th:field="*{contato}" placeholder="Contato"><br><br>
                     
                   
+=======
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" th:field="*{nome}" placeholder="Nome" required><br><br>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" th:field="*{email}" placeholder="Email" required><br><br>
+                    
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" th:field="*{cidade}" placeholder="Cidade"><br><br>
+                    
+                    <label for="bairro">Bairro:</label>
+                    <input type="text" id="bairro" name="bairro" th:field="*{bairro}" placeholder="Bairro"><br><br>
+                    
+                    <label for="contato">Contato:</label>
+                    <input type="text" id="contato" name="contato" th:field="*{contato}" placeholder="Contato"><br><br>
+                    
+                    <label for="tipo">Tipo:</label>
+>>>>>>> 45232dac7c716d6fe8d2ed401437d775e8cd0b2f
                     <select id="tipo" name="tipo" th:field="*{tipo}" onclick="removePlaceholderOption()">
                         <option value="" disabled selected>Tipo de CRAS</option>
                         <option value="paif">Serviço de Proteção e Atendimento Integral à Família (PAIF)</option>
