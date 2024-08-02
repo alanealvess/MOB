@@ -17,11 +17,8 @@ public class Ong {
     private String bairro;
     private String contato;
     private String tipo;
-<<<<<<< HEAD
     private String email;
     private String senha; // Adicionando o atributo senha
-=======
->>>>>>> 45232dac7c716d6fe8d2ed401437d775e8cd0b2f
 
     // Getters e Setters
 
@@ -80,7 +77,6 @@ public class Ong {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-<<<<<<< HEAD
 
     public String getEmail() {
         return email;
@@ -97,6 +93,4 @@ public class Ong {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-=======
->>>>>>> 45232dac7c716d6fe8d2ed401437d775e8cd0b2f
 }

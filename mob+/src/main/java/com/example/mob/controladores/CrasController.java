@@ -10,12 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.example.mob.entidades.Cras;
 import com.example.mob.servicos.CrasService;
 
-<<<<<<< HEAD
 import java.security.SecureRandom;
 import java.util.Base64;
 
-=======
->>>>>>> 45232dac7c716d6fe8d2ed401437d775e8cd0b2f
 @Controller
 public class CrasController {
 
@@ -31,11 +28,8 @@ public class CrasController {
 
     @PostMapping("/salvar-cras")
     public String salvarCras(@ModelAttribute Cras cras) {
-<<<<<<< HEAD
         String senhaGerada = gerarSenhaAutomatica();
         cras.setSenha(senhaGerada);
-=======
->>>>>>> 45232dac7c716d6fe8d2ed401437d775e8cd0b2f
         crasService.saveCras(cras);
         return "redirect:/cras/sucesso";
     }
@@ -44,7 +38,6 @@ public class CrasController {
     public String sucesso() {
         return "cadastrocras_feito";
     }
-<<<<<<< HEAD
 
     private String gerarSenhaAutomatica() {
         SecureRandom random = new SecureRandom();
@@ -52,6 +45,4 @@ public class CrasController {
         random.nextBytes(bytes);
         return Base64.getEncoder().encodeToString(bytes);
     }
-=======
->>>>>>> 45232dac7c716d6fe8d2ed401437d775e8cd0b2f
 }

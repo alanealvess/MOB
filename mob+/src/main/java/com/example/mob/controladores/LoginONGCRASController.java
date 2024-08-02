@@ -37,7 +37,7 @@ public class LoginONGCRASController {
         if (ong != null && ong.getSenha().equals(senha)) {
             return "redirect:/success";
         } else if (cras != null && cras.getSenha().equals(senha)) {
-            return "redirect:/success";
+            return "redirect:/success-cras";
         } else {
             model.addAttribute("error", "Email ou senha inválidos!");
             return "LoginONGCRAS";
@@ -48,4 +48,67 @@ public class LoginONGCRASController {
     public String successPage() {
         return "success";
     }
+
+    @GetMapping("/success-cras")
+    public String successCrasPage() {
+        return "success-cras";
+    }
+
+    @GetMapping("/alterar-senha")
+    public String alterarSenhaPage() {
+        return "alterarSenha";
+    }
+
+    @PostMapping("/alterar-senha")
+    public String processarAlterarSenha(@RequestParam String email, @RequestParam String novaSenha, Model model) {
+        Ong ong = ongService.findByEmail(email);
+        Cras cras = crasService.findByEmail(email);
+
+        if (ong != null) {
+            ong.setSenha(novaSenha);
+            ongService.saveOng(ong); // Atualiza o banco de dados
+            model.addAttribute("message", "Senha alterada com sucesso!");
+        } else if (cras != null) {
+            cras.setSenha(novaSenha);
+            crasService.saveCras(cras); // Atualiza o banco de dados
+            model.addAttribute("message", "Senha alterada com sucesso!");
+        } else {
+            model.addAttribute("error", "Email não encontrado!");
+            return "alterarSenha";
+        }
+        return "redirect:/success";
+    }
+
+    @GetMapping("/alterar-dados")
+    public String alterarDadosPage() {
+        return "alterarDados";
+    }
+
+    @PostMapping("/alterar-dados")
+    public String processarAlterarDados(@RequestParam String email, @RequestParam String nome, @RequestParam String novoEmail, Model model) {
+        Ong ong = ongService.findByEmail(email);
+        Cras cras = crasService.findByEmail(email);
+
+        if (ong != null) {
+            ong.setNome(nome);
+            ong.setEmail(novoEmail);
+            ongService.saveOng(ong); // Atualiza o banco de dados
+            model.addAttribute("message", "Dados alterados com sucesso!");
+        } else if (cras != null) {
+            cras.setNome(nome);
+            cras.setEmail(novoEmail);
+            crasService.saveCras(cras); // Atualiza o banco de dados
+            model.addAttribute("message", "Dados alterados com sucesso!");
+        } else {
+            model.addAttribute("error", "Email não encontrado!");
+            return "alterarDados";
+        }
+        return "redirect:/success";
+    }
+    
+    @GetMapping("/sessao-encerrada")
+    public String sessaoEncerradaPage() {
+        return "sessao-encerrada";
+    }
+
 }
