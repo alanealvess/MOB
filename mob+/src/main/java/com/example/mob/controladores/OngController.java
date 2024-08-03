@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.example.mob.entidades.*;
 import com.example.mob.servicos.*;
 
+import java.security.SecureRandom;
+import java.util.Base64;
+
 @Controller
 public class OngController {
 
@@ -32,6 +35,13 @@ public class OngController {
     @GetMapping("/ong/sucesso")
     public String sucesso() {
         return "cadastroong_feito";
+    }
+
+    private String gerarSenhaAutomatica() {
+        SecureRandom random = new SecureRandom();
+        byte[] bytes = new byte[24];
+        random.nextBytes(bytes);
+        return Base64.getEncoder().encodeToString(bytes);
     }
 
 }

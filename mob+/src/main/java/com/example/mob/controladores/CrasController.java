@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.example.mob.entidades.Cras;
 import com.example.mob.servicos.CrasService;
 
+import java.security.SecureRandom;
+import java.util.Base64;
+
 @Controller
 public class CrasController {
 
@@ -33,6 +36,12 @@ public class CrasController {
     public String sucesso() {
         return "cadastrocras_feito";
     }
-    
+
+    private String gerarSenhaAutomatica() {
+        SecureRandom random = new SecureRandom();
+        byte[] bytes = new byte[24];
+        random.nextBytes(bytes);
+        return Base64.getEncoder().encodeToString(bytes);
+    }
    
 }

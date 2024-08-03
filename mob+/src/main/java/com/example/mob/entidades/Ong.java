@@ -17,6 +17,7 @@ public class Ong {
     private String bairro;
     private String contato;
     private String tipo;
+    private String senha;
 
     // Getters e Setters
 
@@ -74,5 +75,13 @@ public class Ong {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 }

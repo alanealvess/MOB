@@ -21,4 +21,8 @@ public class OngService {
     public List<Ong> getAllOngs() {
         return ongRepository.findAll();
     }
+
+    public Ong findByEmail(String email) {
+        return ongRepository.findByEmail(email);
+    }
 }

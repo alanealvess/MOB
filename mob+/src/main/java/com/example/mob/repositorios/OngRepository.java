@@ -9,4 +9,5 @@ import com.example.mob.entidades.*;
 
 public interface OngRepository extends JpaRepository<Ong, Long> {
 
+    Ong findByEmail(String email);
 }

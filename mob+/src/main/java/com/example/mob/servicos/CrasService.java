@@ -20,4 +20,8 @@ public class CrasService {
     public List<Cras> getAllCras() {
         return crasRepository.findAll();
     }
+
+    public Cras findByEmail(String email) {
+        return crasRepository.findByEmail(email);
+    }
 }
