@@ -12,7 +12,9 @@ public class Cras {
     private Long id;
 
     private String nome;
+
     private String email;
+
     private String cidade;
     private String bairro;
     private String contato;

@@ -1,5 +1,6 @@
 package com.example.mob.servicos;
 
+
 import com.example.mob.entidades.ConectaRecife;
 import com.example.mob.repositorios.ConectaRecifeRepository;
 import org.springframework.beans.factory.annotation.Autowired;

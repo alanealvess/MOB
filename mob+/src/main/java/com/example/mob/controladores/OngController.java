@@ -28,6 +28,9 @@ public class OngController {
 
     @PostMapping("/salvar-ong")
     public String salvarOng(@ModelAttribute Ong ong) {
+
+        String senhaGerada = gerarSenhaAutomatica();
+        ong.setSenha(senhaGerada);
         ongService.saveOng(ong);
         return "redirect:/ong/sucesso";
     }
@@ -43,6 +46,7 @@ public class OngController {
         random.nextBytes(bytes);
         return Base64.getEncoder().encodeToString(bytes);
     }
+
 
 }
 

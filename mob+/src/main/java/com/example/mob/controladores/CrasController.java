@@ -23,11 +23,17 @@ public class CrasController {
     public String index(Model model) {
         model.addAttribute("cras", new Cras());
         model.addAttribute("crasList", crasService.getAllCras());
-        return "telainicial";
+
+        return "telainicial"; // Nome do template sem extensão .html
+
     }
 
     @PostMapping("/salvar-cras")
     public String salvarCras(@ModelAttribute Cras cras) {
+
+        String senhaGerada = gerarSenhaAutomatica();
+        cras.setSenha(senhaGerada);
+
         crasService.saveCras(cras);
         return "redirect:/cras/sucesso";
     }
@@ -43,5 +49,5 @@ public class CrasController {
         random.nextBytes(bytes);
         return Base64.getEncoder().encodeToString(bytes);
     }
-   
+
 }

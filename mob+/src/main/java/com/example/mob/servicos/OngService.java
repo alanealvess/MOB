@@ -1,24 +1,23 @@
 package com.example.mob.servicos;
 
 
-import java.util.List;
 
+import com.example.mob.entidades.Ong;
+import com.example.mob.repositorios.OngRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.mob.entidades.*;
-import com.example.mob.repositorios.*;
-
 @Service
 public class OngService {
+
     @Autowired
     private OngRepository ongRepository;
 
-    public Ong saveOng(Ong ong) {
-        return ongRepository.save(ong);
+    public void saveOng(Ong ong) {
+        ongRepository.save(ong);
     }
 
-    public List<Ong> getAllOngs() {
+    public Iterable<Ong> getAllOngs() {
         return ongRepository.findAll();
     }
 
@@ -26,3 +25,4 @@ public class OngService {
         return ongRepository.findByEmail(email);
     }
 }
+
