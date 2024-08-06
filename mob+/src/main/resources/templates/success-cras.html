@@ -7,14 +7,15 @@
     <link rel="stylesheet" href="/css/success.css">
 </head>
 <body>
-<div class="container">
-    <div class="form-content">
-        <div class="form-title">Olá, <span th:text="${cras.nome}">CRAS _</span>!</div>
-    </div>
-    <div class="btn-container-top-right">
+<div class="navbar">
+    <div class="form-title">Olá, <span th:text="${cras.nome}">CRAS _</span>!</div>
+    <div class="btn-container">
         <button id="btn-informacoes" class="btn-cadastrar" onclick="toggleInformacoes()">Minhas Informações</button>
         <button class="btn-cadastrar btn-logout" onclick="logout()">Logout</button>
     </div>
+</div>
+
+<div class="container">
 </div>
 
 <div id="informacoes" class="informacoes">

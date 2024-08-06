@@ -54,8 +54,9 @@ public class LoginONGCRASController {
 
     @GetMapping("/success-cras")
     public String successCrasPage(HttpSession session, Model model) {
-        String email = (String) session.getAttribute("emailLogado");
-        Cras cras = crasService.findByEmail(email);
+        String email = (String) session.getAttribute("emailLogado");//recuperar o email da sessão
+        Cras cras = crasService.findByEmail(email);//Buscar o objeto pelo email
+
         if (cras != null) {
             model.addAttribute("cras", cras);
         } else {
