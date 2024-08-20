@@ -8,14 +8,15 @@
 </head>
 <body>
 <div class="navbar">
-    <div class="form-title">Olá, <span th:text="${cras.nome}">CRAS _</span>!</div>
+    <img src="/images/logolivre.PNG" class="navbar-logo">
     <div class="btn-container">
-        <button id="btn-informacoes" class="btn-cadastrar" onclick="toggleInformacoes()">Minhas Informações</button>
+        <button id="btn-informacoes" class="btn-cadastrar" onclick="toggleInformacoes()">Meus Dados</button>
         <button class="btn-cadastrar btn-logout" onclick="logout()">Logout</button>
     </div>
 </div>
 
 <div class="container">
+    <h2 class="form-title">Olá, <span th:text="${cras.nome}">CRAS _</span>!</h2>
 </div>
 
 <div id="informacoes" class="informacoes">

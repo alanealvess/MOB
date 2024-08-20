@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Museo+Moderno:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: 'Museo Moderno', sans-serif;
@@ -13,7 +17,7 @@ body {
 
 .navbar {
     width: 100%;
-    background-color: #B0A6E5; /* Cinza próximo ao lilás */
+    background-color: #d3cbf3;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -24,20 +28,31 @@ body {
     z-index: 1000;
 }
 
-.navbar .form-title {
+.navbar-logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+
+.form-title {
     font-size: 24px;
-    color: #fff;
+    color: #000000;
+    text-align: left;
 }
 
 .navbar .btn-container {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    gap: 10px;
 }
 
 .btn-cadastrar {
     padding: 8px 16px;
-    color: #000;
+    color: #fff;
     background: linear-gradient(to right, #0097B2, #7ED957);
     border: none;
     border-radius: 20px;
@@ -45,9 +60,9 @@ body {
     transition: background-color 0.3s;
     font-family: 'Museo Moderno', Arial, sans-serif;
     font-size: 14px;
-    width: 200px;
     height: 35px;
-    margin-left: 10px;
+    flex-shrink: 1;
+    white-space: nowrap; /* Evita que o texto dentro dos botões quebre em duas linhas */
 }
 
 .btn-cadastrar:hover {
@@ -62,8 +77,9 @@ body {
     width: 100%;
     max-width: 1000px;
     position: absolute;
-    top: 100px; /* Ajuste para considerar a altura da navbar */
+    top: 100px;
     left: 10%;
+    padding: 0 20px;
 }
 
 .form-content {
@@ -84,11 +100,11 @@ label {
     padding: 20px;
     background: linear-gradient(to right, #0097B2, #7ED957);
     border-radius: 20px;
-    max-width: 400px;
+    max-width: 100%;
     color: #fff;
     display: none;
-    font-size: 14px; /* Diminui o tamanho do texto */
-    position: absolute; /* Para alinhar com o botão */
+    font-size: 14px;
+    position: absolute;
 }
 
 .informacoes a {
@@ -97,7 +113,7 @@ label {
     cursor: pointer;
     font-family: 'Museo Moderno', Arial, sans-serif;
     font-size: 14px;
-    margin-top: 5px; /* Reduz a margem superior */
+    margin-top: 5px;
 }
 
 .informacoes a:hover {
@@ -106,4 +122,40 @@ label {
 
 #informacoes.show {
     display: block;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .navbar .form-title {
+        font-size: 20px;
+        margin-left: 8px; /* Ajuste de margem para telas menores */
+    }
+
+    .btn-cadastrar {
+        font-size: 12px;
+        padding: 6px 12px;
+        flex-shrink: 1;
+        max-width: 120px;
+    }
+
+    .navbar .btn-container {
+        gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .form-title {
+        font-size: 18px;
+        margin-left: 5px; /* Ajuste de margem para telas pequenas */
+    }
+
+    .btn-cadastrar {
+        font-size: 10px;
+        padding: 4px 8px;
+        max-width: 100px;
+    }
+
+    .navbar .btn-container {
+        gap: 2px;
+    }
 }
