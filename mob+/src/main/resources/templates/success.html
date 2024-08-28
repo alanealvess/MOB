@@ -7,28 +7,31 @@
     <link rel="stylesheet" href="/css/success.css">
 </head>
 <body>
-    <div class="container">
-        <div class="form-content">
-            <div class="form-title">Olá, ONG _!</div>
-        </div>
+    <div class="navbar">
+        <img src="/images/logolivre.PNG" class="navbar-logo">
         <div class="btn-container-top-right">
             <button id="btn-informacoes" class="btn-cadastrar" onclick="toggleInformacoes()">Minhas Informações</button>
             <button class="btn-cadastrar btn-logout" onclick="logout()">Logout</button>
         </div>
     </div>
+    <div class="container">
+        <div class="form-content">
+            <h2 class="form-title">Olá, <span th:text="${ong.nome}">ONG_</span>!</h2>
+        </div>
+    </div>
 
     <div id="informacoes" class="informacoes">
         <div>
-            <label>Nome: ONG _</label>
+            <label>Nome: <span th:text="${ong.nome}">ONG _</span></label>
         </div>
         <div>
-            <label>CNPJ: 00.000.000/0000-00</label>
+            <label>CNPJ: <span th:text="${ong.cnpj}">00.000.000/0000-00</span></label>
         </div>
         <div>
-            <label>Email: exemplo@ong.com</label>
+            <label>Email: <span th:text="${ong.email}">exemplo@ong.com</span></label>
         </div>
         <div>
-            <label>Contato: (00) 00000-0000</label>
+            <label>Contato: <span th:text="${ong.contato}">(00) 00000-0000</span></label>
         </div>
         <div class="btn-container">
             <a onclick="alterarSenha()">Alterar Senha</a>

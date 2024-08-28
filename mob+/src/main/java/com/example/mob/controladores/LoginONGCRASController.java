@@ -48,7 +48,15 @@ public class LoginONGCRASController {
     }
 
     @GetMapping("/success")
-    public String successPage() {
+    public String successPage(HttpSession session, Model model) {
+        String email = (String) session.getAttribute("emailLogado");//recuperar o email da sessão
+        Ong ong = ongService.findByEmail(email);//Buscar o objeto pelo email
+
+        if (ong != null) {
+            model.addAttribute("ong", ong);
+        } else {
+            model.addAttribute("error", "ONG não encontrada");
+        }
         return "success";
     }
 
@@ -80,15 +88,17 @@ public class LoginONGCRASController {
             ong.setSenha(novaSenha);
             ongService.saveOng(ong); // Atualiza o banco de dados
             model.addAttribute("message", "Senha alterada com sucesso!");
+            return "redirect:/success";
         } else if (cras != null) {
             cras.setSenha(novaSenha);
             crasService.saveCras(cras); // Atualiza o banco de dados
             model.addAttribute("message", "Senha alterada com sucesso!");
+            return "redirect:/success-cras";
         } else {
             model.addAttribute("error", "Email não encontrado!");
             return "alterarSenha";
         }
-        return "redirect:/success";
+
     }
 
     @GetMapping("/alterar-dados")
@@ -106,18 +116,20 @@ public class LoginONGCRASController {
             ong.setEmail(novoEmail);
             ongService.saveOng(ong); // Atualiza o banco de dados
             model.addAttribute("message", "Dados alterados com sucesso!");
+            return "redirect:/success";
         } else if (cras != null) {
             cras.setNome(nome);
             cras.setEmail(novoEmail);
             crasService.saveCras(cras); // Atualiza o banco de dados
             model.addAttribute("message", "Dados alterados com sucesso!");
+            return "redirect:/success-cras";
         } else {
             model.addAttribute("error", "Email não encontrado!");
             return "alterarDados";
         }
-        return "redirect:/success";
+
     }
-    
+
     @GetMapping("/sessao-encerrada")
     public String sessaoEncerradaPage() {
         return "sessao-encerrada";

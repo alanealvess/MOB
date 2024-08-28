@@ -20,7 +20,7 @@
             </div>
             <button type="submit">Alterar Senha</button>
         </form>
-        <a href="/success">Voltar</a>
+        <a th:href="${emailOngLogado != null ? '/success' : '/success-cras'}">Voltar</a>
     </div>
 </body>
 </html>

@@ -19,7 +19,7 @@
                     <input type="password" id="senha" name="senha" placeholder="Senha" required><br><br>
                     
                     <!-- Exibe a mensagem de erro se houver -->
-                    <div id="error-message" th:if="${error}" th:text="${error}" style="color: red;"></div>
+                    <div id="error-message" th:if="${error != null}" th:text="${error}" style="color: red;"></div>
                     
                     <div class="btn-container">
                         <button type="submit" class="btn-logar">Login</button>
