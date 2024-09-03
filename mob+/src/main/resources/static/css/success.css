@@ -124,6 +124,56 @@ label {
     display: block;
 }
 
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #f3f3f3;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.card button {
+    padding: 10px 20px;
+    background: linear-gradient(to right, #0097B2, #7ED957);
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.card button:hover {
+    background-color: #007a94;
+    transform: scale(1.05);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
 /* Media Queries para Responsividade */
 @media (max-width: 768px) {
     .navbar .form-title {
@@ -140,6 +190,16 @@ label {
 
     .navbar .btn-container {
         gap: 5px;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        margin-bottom: 20px;
+        width: 80%;
     }
 }
 

@@ -16,7 +16,22 @@
     </div>
 
     <div class="container">
-        <h2 class="form-title">Olá, <span th:text="${cras.nome}">CRAS _</span>!</h2>
+        <div class="form-content">
+            <h2 class="form-title">Olá, <span th:text="${cras.nome}">CRAS _</span>!</h2>
+        </div>
+
+        <div class="card-container">
+            <div class="card">
+                <h3>Cadastrar Pessoa</h3>
+                <p>Clique aqui para cadastrar uma nova pessoa.</p>
+                <button onclick="window.location.href='/cadastrar-pessoa'">Cadastrar</button>
+            </div>
+            <div class="card">
+                <h3>Visualizar Pessoas Cadastradas</h3>
+                <p>Veja a lista de pessoas cadastradas pelo seu CRAS.</p>
+                <button onclick="window.location.href='/listar-pessoas'">Visualizar</button>
+            </div>
+        </div>
     </div>
 
     <div id="informacoes" class="informacoes">
