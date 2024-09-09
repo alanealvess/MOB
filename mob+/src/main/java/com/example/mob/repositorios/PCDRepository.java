@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface PessoaComDeficienciaRepository extends JpaRepository<PessoaComDeficiencia, Long> {
+public interface PCDRepository extends JpaRepository<PessoaComDeficiencia, Long> {
 
     List<PessoaComDeficiencia> findByOng(Ong ong);
     List<PessoaComDeficiencia> findByCras(Cras cras);

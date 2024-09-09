@@ -23,12 +23,12 @@
             <div class="card">
                 <h3>Cadastrar Pessoa</h3>
                 <p>Clique aqui para cadastrar uma nova pessoa.</p>
-                <button onclick="window.location.href='/cadastrar-pessoa'">Cadastrar</button>
+                <button onclick="goToCadastroPCD()">Cadastrar</button>
             </div>
             <div class="card">
                 <h3>Visualizar Pessoas Cadastradas</h3>
                 <p>Veja a lista de pessoas cadastradas pela sua ONG.</p>
-                <button onclick="window.location.href='/listar-pessoas'">Visualizar</button>
+                <button onclick="window.location.href='/listar-pcds'">Visualizar</button>
             </div>
         </div>
     </div>
@@ -79,6 +79,10 @@
 
         function logout() {
             window.location.href = "/sessao-encerrada";
+        }
+
+        function goToCadastroPCD(){
+            window.location.href = "cadastrar-pcd.html"
         }
     </script>
 </body>
